@@ -8,10 +8,12 @@
     <title>INDEX</title>
 </head>
 <body>
-    <div class="info">
-        <p class="kenteken"></p>
-        <p class="merk"></p>
-        <p class="handelsbenaming"></p>
+    <div id="info">
+        <div class="kenteken">
+            <div class="NL"></div>
+        </div>
+        <div class="informatie">
+        </div>
     </div>
 </body>
 <script src="script.js"></script>

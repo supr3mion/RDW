@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: sans-serif;
+}
+#info{
+    width: 80%;
+    height: fit-content;
+    border: 5px solid yellow;
+    margin: auto;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+#info .kenteken {
+    width: fit-content;
+    height: 40px;
+    margin: 20px auto;
+    background-color: yellow;
+    color: black;
+    border-radius: 8px;
+    font-size: 40px;
+    font-weight: 300;
+    display: flex;
+    overflow: hidden;
+}
+.kenteken .NL{
+    width: 15px;
+    height: 100%;
+    background-color: blue;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+#info .informatie{
+    height: fit-content;
+    width: 100%;
+    border-top: 5px solid yellow;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
