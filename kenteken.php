@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['submit'])) {
-    $kentekenPlaat = $_POST['kenteken'];
+    $kentekenPlaat = strtoupper($_POST['kenteken']);
     $startUrl = 'https://opendata.rdw.nl/resource/m9d7-ebf2.json?';
     $zoekKenteken = 'kenteken='.$kentekenPlaat;
 

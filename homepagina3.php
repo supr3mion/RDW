@@ -27,7 +27,7 @@
 			</h3>
 			<form action="homepagina3.php" method="POST">
 				<div>
-            		<input id="lastName" type="text" name="kenteken"/>
+            		<input id="lastName" type="text" name="kenteken" style="text-transform: uppercase;"/>
             	</div>  
 				<div> 
 					<button type="submit" id="button" name="submit">Informatie Ophalen!</button> 
