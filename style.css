@@ -1,46 +1,39 @@
+html,
 body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    font-family: sans-serif;
+  height: 100%;
+  background-image: url(20190717-fiat-500-08_b.jpg);
+  background-repeat: no-repeat;
+  background-size: 2600px 1500px;
+  background-color: rgb(226, 226, 226);
+  width: 100%;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+  overflow: inherit;
+  text-align: center;
+  font-family: verdana, Arial, sans-serif;
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  flex: 1;
 }
-#info{
-    width: 80%;
-    height: fit-content;
-    border: 5px solid yellow;
-    margin: auto;
-    background-color: black;
-    color: white;
-    border-radius: 10px;
+#button {
+  background-color: white;
+  border-color: white;
+  border-radius: 10px;
+  height: 60px;
+  width: 200px;
+  font-size: 20px;
+  margin-top: 20px;
 }
-#info .kenteken {
-    width: fit-content;
-    height: 40px;
-    margin: 20px auto;
-    background-color: yellow;
-    color: black;
-    border-radius: 8px;
-    font-size: 40px;
-    font-weight: 300;
-    display: flex;
-    overflow: hidden;
-}
-.kenteken .NL{
-    width: 15px;
-    height: 100%;
-    background-color: blue;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-p {
-    margin: 0;
-    padding: 0;
-}
-#info .informatie{
-    height: fit-content;
-    width: 100%;
-    border-top: 5px solid yellow;
-    font-size: 20px;
-    margin-bottom: 5px;
+
+#lastName {
+  margin-top: 100px;
+  background-color: yellow;
+  font-size: 100px;
+  border-radius: 10px;
+  height: 100px;
+  width: 325px;
+  margin-top: 100px;
 }
