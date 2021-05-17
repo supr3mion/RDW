@@ -1,3 +1,5 @@
+<?php include('kenteken.php') ?>
+
 <!DOCTYPE html>
 <html lang="nl">
 	<head>
@@ -18,32 +20,19 @@
 		<title>RDW Applicatie</title>
 	</head>
 	<body>
-		
-    
-
-			</nav>
-		</header>
-
 		<main>
 			<h1 id="title">RDW Applicatie </h1>
 			<h3>
 				Welkom bij onze RDW Applicatie. Op deze applicatie kan je je kenteken invoeren, en allemaal verschillende informatie over je auto vinden en vergelijken met andere auto's.
-
-
 			</h3>
-			<div>
-            <label for="lastName"></label>
-            <input
-                id="lastName"
-                type="text"
-                id="lastName"
-			/>
-            </div>  
-			<div> 
-			<button type="button" id="button">Informatie Ophalen!</button> 
-		</div> 
-
-
+			<form action="homepagina3.php" method="POST">
+				<div>
+            		<input id="lastName" type="text" name="kenteken"/>
+            	</div>  
+				<div> 
+					<button type="submit" id="button" name="submit">Informatie Ophalen!</button> 
+				</div>
+			</form> 
 		</main>
 		<footer>
 			
