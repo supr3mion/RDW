@@ -1,5 +1,5 @@
 <?php
-$woonplaatsen = array('wel', 'niet',);
+$eigenschappen = array('wel', 'niet',);
 $aantallen = array(3, 3);
 ?>
 
@@ -19,14 +19,14 @@ $aantallen = array(3, 3);
 
     <script type="text/javascript">
    
-    var woonplaatsen = <?php echo json_encode($woonplaatsen) ?>;
+    var woonplaatsen = <?php echo json_encode($eigenschappen) ?>;
     var aantallen = <?php echo json_encode($aantallen) ?>;
 
     
     const data = {
-        labels: woonplaatsen, 
+        labels: eigenschappen, 
         datasets: [{
-            label: 'wel of niet deze eigenschap',
+            label: 'eigenschap',
             data: aantallen, 
             backgroundColor: [
                 'green',
