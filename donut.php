@@ -1,5 +1,26 @@
 <?php
-$woonplaatsen = array('Sneek', 'Bolsward', 'Sint Nicolaasga', 'Overig');
+
+$json = file_get_contents('https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=RX831R');
+
+$json_data = json_decode( $json );
+$data = $json_data[0];
+//echo '<pre>' . print_r( $data, TRUE) . '</pre>';
+//foreach( $json_data as $data )
+//{
+    echo 'Merk  en Model  = ' . $data->merk . ' ' . $data->handelsbenaming . '</p>';
+    echo '<p>Kenteken = ' . $data->kenteken . '<br />';
+    echo 'Cylinderinhoud = ' . $data->cilinderinhoud . '</p>';
+//}
+
+
+
+
+
+
+
+
+
+$clinders = array('1', '2', '4', 'Overig');
 $aantallen = array(5, 2, 2, 9);
 ?>
 
@@ -10,21 +31,13 @@ $aantallen = array(5, 2, 2, 9);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stap 3: Een grafiek met eigen data</title>
+    <title></title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
     <?php include('nav.php'); ?>
-    <h1>Stap 3 - de oplossing: Een grafiek met eigen data</h1>
-    <p>Opdracht: in de code, bovenaan, staan in de php twee variabelen:
-    <ul>
-        <li>Woonplaatsen: de verschillende woonplaatsen van jullie klas</li>
-        <li>Aantallen: het aantal studenten per woonplaats</li>
-    </ul>
-    Aan jou de opdracht om hier een grafiek van te maken
-    (een doughnut, of als je dat durft, een Bar Chart)
-    </p>
+    
 
     <div>
         <canvas id="mijnGrafiek"></canvas>
@@ -32,7 +45,7 @@ $aantallen = array(5, 2, 2, 9);
 
     <script type="text/javascript">
     // Eerst de PHP data opslaaj in JS variabelen
-    var woonplaatsen = <?php echo json_encode($woonplaatsen) ?>;
+    var clinders = <?php echo json_encode($clinders) ?>;
     var aantallen = <?php echo json_encode($aantallen) ?>;
 
     // Dan de setup code met onze eigen data
