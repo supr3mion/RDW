@@ -5,13 +5,13 @@ $json = file_get_contents('https://opendata.rdw.nl/resource/m9d7-ebf2.json?$sele
 $json_data = json_decode( $json );
 $data = $json_data[0];
 //echo '<pre>' . print_r( $data, TRUE) . '</pre>';
-//foreach( $json_data as $data )
-//{
-    echo 'Merk  en Model  = ' . $data->merk . ' ' . $data->handelsbenaming . '</p>';
+foreach( $json_data as $data )
+{
+    echo 'Merk  en Model  = ' . $data->count_kenteken . ' ' . $data->handelsbenaming . '</p>';
     echo '<p>Kenteken = ' . $data->kenteken . '<br />';
     echo 'Cylinderinhoud = ' . $data->cilinderinhoud . '</p>';
     echo 'Aantal cilinders = ' . $data->aantal_cilinders . '<br />';
-//}
+}
 
 
 
