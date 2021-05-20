@@ -1,6 +1,5 @@
 <?php
 
-//$json = file_get_contents('https://opendata.rdw.nl/resource/m9d7-ebf2.json?$select=distinct(aantal_cilinders)');
 $startUrl = 'https://opendata.rdw.nl/resource/m9d7-ebf2.json?$';
 $zoekCilinders = 'select=distinct(aantal_cilinders)';
 
@@ -11,7 +10,7 @@ $json = file_get_contents($startUrl.$zoekCilinders);
 
 
 
-$json_data = json_decode( $json );
+$json_data = json_decode($json);
 $data = $json_data[0];
 //echo '<pre>' . print_r( $data, TRUE) . '</pre>';
 
@@ -20,12 +19,14 @@ foreach( $json_data as $data )
 {
     $data_cilinder = $data->aantal_cilinders_1;
 
-    $json_cilinders = file_get_contents($startUrl.$zoekCilindersAantal.$data_cilinder);
+    $ZCK = $zoekCilindersAantal . strval($data_cilinder);
 
-    $json_data_cilinder = json_decode( $json );
+    $json_cilinders = file_get_contents($startUrl.$ZCK);
+
+    $json_data_cilinder = json_decode($json_cilinders);
     $data_cilinder_auto = $json_data_cilinder[0];
 
-    echo 'cilinders = ' . $data->aantal_cilinders_1 . "  aantal auto's met zoveel cilinders = " . $data_cilinder_auto->count_kenteken . '</p>';
+    echo 'cilinders = ' . $data->aantal_cilinders_1 . "<br>aantal auto's met zoveel cilinders = " . $data_cilinder_auto->count_kenteken . '</p>';
 
 }
 
@@ -53,9 +54,6 @@ $aantallen = array(5, 2, 2, 9);
 </head>
 
 <body>
-    <?php include('nav.php'); ?>
-    
-
     <div>
         <canvas id="mijnGrafiek"></canvas>
     </div>
