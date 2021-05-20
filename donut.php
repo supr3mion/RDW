@@ -1,6 +1,6 @@
 <?php
 
-$json = file_get_contents('https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=RX831R');
+$json = file_get_contents('https://opendata.rdw.nl/resource/m9d7-ebf2.json?$select=count(kenteken)&$where=aantal_cilinders=4');
 
 $json_data = json_decode( $json );
 $data = $json_data[0];
@@ -10,6 +10,7 @@ $data = $json_data[0];
     echo 'Merk  en Model  = ' . $data->merk . ' ' . $data->handelsbenaming . '</p>';
     echo '<p>Kenteken = ' . $data->kenteken . '<br />';
     echo 'Cylinderinhoud = ' . $data->cilinderinhoud . '</p>';
+    echo 'Aantal cilinders = ' . $data->aantal_cilinders . '<br />';
 //}
 
 
