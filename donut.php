@@ -20,7 +20,10 @@ $cilinders_auto = array();
 
 foreach( $json_data as $data )
 {
+    if($data != "") {
     $data_cilinder = $data->aantal_cilinders_1;
+
+    if($data_cilinder != "") {
 
     $ZCK = $zoekCilindersAantal . strval($data_cilinder);
 
@@ -33,17 +36,16 @@ foreach( $json_data as $data )
 
     echo '<p>cilinders = ' . $data_cilinder . "<br>aantal autos met zoveel cilinders = " . $cilinder_kentekens . '</p>';
 
-    $comare = '';
-
     if($data_cilinder != "") {
     array_push($cilinders, $data_cilinder);
     array_push($cilinders_auto, $cilinder_kentekens);
     } else {
-        
+
     }
 
     echo json_encode($cilinders);
     echo json_encode($cilinders_auto);
+}
 
 };
 
