@@ -9,7 +9,6 @@ $aantallen = array(3, 3);
 <head>
     <title>grafiek</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -25,7 +24,7 @@ $aantallen = array(3, 3);
 
     
     const data = {
-        labels: woonplaatsen, 
+        labels: eigenschappen, 
         datasets: [{
             label: 'eigenschap',
             data: aantallen, 

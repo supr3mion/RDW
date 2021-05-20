@@ -12,6 +12,7 @@ $json = file_get_contents($startUrl.$zoekCilinders);
 
 $json_data = json_decode($json);
 $data = $json_data[0];
+//echo '<pre>' . print_r( $data, TRUE) . '</pre>';
 
 
 $cilinders = array();
@@ -31,15 +32,14 @@ foreach( $json_data as $data )
 
     $cilinder_kentekens = $data_cilinder_auto->count_kenteken;
 
-    echo '<p>cilinders = ' . $data_cilinder . "<br>aantal autos met zoveel cilinders = " . $cilinder_kentekens . '</p>';
+    echo 'cilinders = ' . $data_cilinder . "<br>aantal auto's met zoveel cilinders = " . $cilinder_kentekens . '</p>';
 
     array_push($cilinders, $data_cilinder);
     array_push($cilinders_auto, $cilinder_kentekens);
 
     echo json_encode($cilinders);
     echo json_encode($cilinders_auto);
-
-};
+}
 
 ?>
 
@@ -52,7 +52,7 @@ foreach( $json_data as $data )
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -62,14 +62,14 @@ foreach( $json_data as $data )
 
     <script type="text/javascript">
     // Eerst de PHP data opslaaj in JS variabelen
-    var cilinders = <?php echo json_encode($cilinders) ?>;
+    var clinders = <?php echo json_encode($cilinders) ?>;
     var aantallen = <?php echo json_encode($cilinders_auto) ?>;
 
     // Dan de setup code met onze eigen data
     const data = {
-        labels: cilinders, // hier de variabele ipv. een lijstje
+        labels: woonplaatsen, // hier de variabele ipv. een lijstje
         datasets: [{
-            label: 'autos met cilinders',
+            label: 'verschillende soorten cilinders',
             data: aantallen, // hier de variabele ipv. een lijstje
             backgroundColor: [
                 'red',
@@ -87,7 +87,7 @@ foreach( $json_data as $data )
                 'lightorange',
                 'lightpurple'
             ],
-            hoverOffset: 4
+            hoverOffset: 10
         }]
     };
 
