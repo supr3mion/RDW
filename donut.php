@@ -1,16 +1,32 @@
 <?php
 
-$json = file_get_contents('https://opendata.rdw.nl/resource/m9d7-ebf2.json?$select=count(kenteken)&$where=aantal_cilinders=4');
+//$json = file_get_contents('https://opendata.rdw.nl/resource/m9d7-ebf2.json?$select=distinct(aantal_cilinders)');
+$startUrl = 'https://opendata.rdw.nl/resource/m9d7-ebf2.json?$';
+$zoekCilinders = 'select=distinct(aantal_cilinders)';
+
+$zoekCilindersAantal = 'select=count(kenteken)&$where=aantal_cilinders=';
+
+
+$json = file_get_contents($startUrl.$zoekCilinders);
+
+
 
 $json_data = json_decode( $json );
 $data = $json_data[0];
 //echo '<pre>' . print_r( $data, TRUE) . '</pre>';
+
+
 foreach( $json_data as $data )
 {
-    echo 'Merk  en Model  = ' . $data->count_kenteken . ' ' . $data->handelsbenaming . '</p>';
-    echo '<p>Kenteken = ' . $data->kenteken . '<br />';
-    echo 'Cylinderinhoud = ' . $data->cilinderinhoud . '</p>';
-    echo 'Aantal cilinders = ' . $data->aantal_cilinders . '<br />';
+    $data_cilinder = $data->aantal_cilinders_1;
+
+    $json_cilinders = file_get_contents($startUrl.$zoekCilindersAantal.$data_cilinder);
+
+    $json_data_cilinder = json_decode( $json );
+    $data_cilinder_auto = $json_data_cilinder[0];
+
+    echo 'cilinders = ' . $data->aantal_cilinders_1 . "  aantal auto's met zoveel cilinders = " . $data_cilinder_auto->count_kenteken . '</p>';
+
 }
 
 
