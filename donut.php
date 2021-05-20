@@ -15,6 +15,10 @@ $data = $json_data[0];
 //echo '<pre>' . print_r( $data, TRUE) . '</pre>';
 
 
+$cilinders = array();
+$cilinders_auto = array();
+
+
 foreach( $json_data as $data )
 {
     $data_cilinder = $data->aantal_cilinders_1;
@@ -26,20 +30,17 @@ foreach( $json_data as $data )
     $json_data_cilinder = json_decode($json_cilinders);
     $data_cilinder_auto = $json_data_cilinder[0];
 
-    echo 'cilinders = ' . $data->aantal_cilinders_1 . "<br>aantal auto's met zoveel cilinders = " . $data_cilinder_auto->count_kenteken . '</p>';
+    $cilinder_kentekens = $data_cilinder_auto->count_kenteken;
 
+    echo 'cilinders = ' . $data_cilinder . "<br>aantal auto's met zoveel cilinders = " . $cilinder_kentekens . '</p>';
+
+    array_push($cilinders, $data_cilinder);
+    array_push($cilinders_auto, $cilinder_kentekens);
+
+    echo json_encode($cilinders);
+    echo json_encode($cilinders_auto);
 }
 
-
-
-
-
-
-
-
-
-$clinders = array('1', '2', '4', 'Overig');
-$aantallen = array(5, 2, 2, 9);
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +52,7 @@ $aantallen = array(5, 2, 2, 9);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -60,21 +62,30 @@ $aantallen = array(5, 2, 2, 9);
 
     <script type="text/javascript">
     // Eerst de PHP data opslaaj in JS variabelen
-    var clinders = <?php echo json_encode($clinders) ?>;
-    var aantallen = <?php echo json_encode($aantallen) ?>;
+    var clinders = <?php echo json_encode($cilinders) ?>;
+    var aantallen = <?php echo json_encode($cilinders_auto) ?>;
 
     // Dan de setup code met onze eigen data
     const data = {
         labels: woonplaatsen, // hier de variabele ipv. een lijstje
         datasets: [{
-            label: 'Woonplaatsen in deze klas',
+            label: 'verschillende soorten cilinders',
             data: aantallen, // hier de variabele ipv. een lijstje
             backgroundColor: [
                 'red',
                 'yellow',
                 'green',
                 'blue'
-
+                'orange',
+                'purple',
+                'darkgreen',
+                'darkblue'
+                'darkred',
+                'grey',
+                'lightgreen',
+                'lightblue'
+                'lightorange',
+                'lightpurple'
             ],
             hoverOffset: 10
         }]

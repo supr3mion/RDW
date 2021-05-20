@@ -6,7 +6,7 @@
 		<meta
 			http-equiv="Content-type"
 			content="text/html; 
-    charset=UTF-8"
+    		charset=UTF-8"
 		/>
 		<meta name="robots" content="all" />
 		<meta name="language" content="dutch" />
