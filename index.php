@@ -24,9 +24,9 @@
 			<h3>
 				Welkom bij onze RDW Applicatie. Op deze applicatie kan je je kenteken invoeren, en allemaal verschillende informatie over je auto vinden en vergelijken met andere auto's.
 			</h3>
-			<form action="kenteken.php" method="POST">
+			<form action="info.php" method="POST">
 				<div>
-            		<input id="lastName" type="text" name="kenteken" style="text-transform: uppercase;"/>
+            		<input id="kenteken" type="text" name="kenteken" style="text-transform: uppercase;" min="6" max="6">
             	</div>  
 				<div> 
 					<button type="submit" id="button" name="submit">Informatie Ophalen!</button> 
