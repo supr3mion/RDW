@@ -18,10 +18,10 @@
     }
     }
 
-    $data_type = array('voertuigsoort', 'handelsbenaming', 'inrichting', 'aantal_zitplaatsen', 'eerste_kleur', 'tweede_kleur' ,
+    $data_type = array('merk', 'handelsbenaming', 'voertuigsoort', 'inrichting', 'aantal_zitplaatsen', 'eerste_kleur', 'tweede_kleur' ,
     'aantal_cilinders' ,'cilinderinhoud' ,'toegestane_maximum_massa_voertuig', 'maximum_massa_trekken_ongeremd', 'maximum_trekken_massa_geremd', 
     'wam_verzekerd', 'aantal_deuren', 'aantal_wielen', 'europese_voertuigcategorie', 'massa_ledig_voertuig'); //16
-    $data_info = array('merk: ', 'type: ', 'inrichting: ', 'aantal zitplaatsen: ', 'eerste kleur: ', 'tweede kleur: ' ,
+    $data_info = array('merk: ', 'type: ',  'voertuigsoort: ', 'inrichting: ', 'aantal zitplaatsen: ', 'eerste kleur: ', 'tweede kleur: ' ,
     'aantal cilinders:' ,'cilinderinhoud: ' ,'toegelate maximum massa voertuig: ', 'maximum gewicht trekken ongeremd: ', 'maximum gewicht trekken geremd: ', 
     'wam verzekerd: ', 'aantal deuren: ', 'aantal wielen: ', 'europese voertuigcategorie: ', 'totaal gewicht voertuig: ');
 ?>
@@ -40,8 +40,8 @@
         <div id="general_info"><?php echo $kenteken; ?></div>
         <div id="other_info">
         <?php 
-        $number = 1;
-        for ($i = 0; $i<15; $i++) { 
+        $number = 0;
+        for ($i = 0; $i<17; $i++) { 
 
             $type = $data_type[$number];
         ?>
@@ -56,5 +56,10 @@
         ?>
         </div>
     </div>
+    <form id="grafieken" action="grafieken.php" method="POST">
+		<div> 
+			<button type="submit" id="button_grafieken" name="submit">Informatie Ophalen!</button> 
+		</div>
+	</form> 
 </body>
 </html>

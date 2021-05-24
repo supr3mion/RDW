@@ -76,6 +76,23 @@ p {
 #other_info {
   text-align: left;
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 30% 70%;
   grid-row-gap: 1px;
+}
+#grafieken {
+  height: fit-content;
+  width: fit-content;
+  margin: 20px auto;
+}
+#button_grafieken {
+  width: fit-content;
+  height: 30px;
+  background-color: rgb(226, 226, 226, 0.8);
+
+}
+:hover #button_grafieken{
+  cursor: pointer;
+}
+:hover #button {
+  cursor: pointer;
 }
