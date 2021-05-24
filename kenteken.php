@@ -17,6 +17,7 @@ if(isset($_POST['submit'])) {
         echo 'Inrichting = ' . $data->inrichting . '<br />';
         echo 'Aantal cilinders = ' . $data->aantal_cilinders . '<br />';
     }
+    
 } else {
     echo 'er is geen kenteken opgegeven';
 }

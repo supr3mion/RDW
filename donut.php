@@ -1,4 +1,9 @@
+<?php
 
+$cilinders = $_GET['CILINDER1'];
+$cilinders_auto = $_GET['CILINDER2'];
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +23,6 @@
     </div>
 
     <script type="text/javascript">
-
-<?php include('cilinder.php'); ?>
 
     // Eerst de PHP data opslaaj in JS variabelen
     var cilinders = <?php echo json_encode($cilinders) ?>;

@@ -33,11 +33,15 @@ foreach( $json_data as $data )
 
     $cilinder_kentekens = $data_cilinder_auto->count_kenteken;
 
+    $cilinder_kenteken_int = intval($cilinder_kentekens);
+
     //echo '<p>cilinders = ' . $data_cilinder . "<br>aantal autos met zoveel cilinders = " . $cilinder_kentekens . '</p>';
 
     if($data_cilinder != "") {
-    array_push($cilinders, $data_cilinder);
-    array_push($cilinders_auto, $cilinder_kentekens);
+        if($cilinder_kenteken_int > 100) {
+            array_push($cilinders, $data_cilinder);
+            array_push($cilinders_auto, $cilinder_kenteken_int);
+        }
     } else {
 
     }
@@ -47,5 +51,9 @@ foreach( $json_data as $data )
     }
     
 };
+
+$HTTP = array('CILINDER1' => $cilinders, 'CILINDER2' => $cilinders_auto);
+
+header('location: donut.php?' . http_build_query($HTTP));
 
 ?>
