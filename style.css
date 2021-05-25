@@ -38,13 +38,6 @@ body {
   margin-top: 100px;
   text-align: center;
 }
-#mijnGrafiek {
-  max-width: 80%;
-  min-width: 80%;
-  border: 2px solid black;
-  border-radius: 10px;
-  margin: auto;
-}
 
 #basis_info {
   width: 80%;
@@ -88,9 +81,8 @@ p {
   width: fit-content;
   height: 30px;
   background-color: rgb(226, 226, 226, 0.8);
-
 }
-:hover #button_grafieken{
+:hover #button_grafieken {
   cursor: pointer;
 }
 :hover #button {
@@ -98,7 +90,7 @@ p {
 }
 
 #grafiek_grid {
-  margin:0;
+  margin: 0;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-row-gap: 1px;
@@ -107,4 +99,34 @@ p {
   width: 50%;
   height: fit-content;
   margin: 0;
+}
+
+#Grafiek1 {
+  max-width: 25%;
+  min-width: 25%;
+  border: 2px solid;
+  border-radius: 10px;
+  margin: auto;
+  float: left;
+}
+
+#Grafiek2 {
+  max-width: 25%;
+  min-width: 25%;
+  border: 2px solid;
+  border-radius: 10px;
+  margin: auto;
+  float: left;
+}
+
+#tekst1 {
+  margin-left: 225px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+#tekst2 {
+  margin-left: 870px;
+  text-align: left;
+  margin-top: 10px;
 }

@@ -1,9 +1,9 @@
 <?php
 
 $startUrl = 'https://opendata.rdw.nl/resource/m9d7-ebf2.json?$';
-$zoekCilinders = 'select=distinct(aantal_cilinders)';
+$zoekCilinders = 'select=distinct(aantal_zitplaatsen)';
 
-$zoekCilindersAantal = 'select=count(kenteken)&$where=aantal_cilinders=';
+$zoekCilindersAantal = 'select=count(kenteken)&$where=aantal_zitplaatsen=';
 
 
 $json = file_get_contents($startUrl.$zoekCilinders);
@@ -23,7 +23,7 @@ foreach( $json_data as $data )
 {
     if($data != "") {
 
-    $data_cilinder = $data->aantal_cilinders_1;
+    $data_cilinder = $data->aantal_zitplaatsen_1;
 
     $ZCK = $zoekCilindersAantal . strval($data_cilinder);
 
@@ -50,6 +50,10 @@ foreach( $json_data as $data )
     }
     
 };
+
+echo json_encode($cilinders);
+echo json_encode($cilinders_auto);
+
 
 //$HTTP = array('CILINDER1' => $cilinders, 'CILINDER2' => $cilinders_auto);
 
