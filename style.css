@@ -96,3 +96,15 @@ p {
 :hover #button {
   cursor: pointer;
 }
+
+#grafiek_grid {
+  margin:0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row-gap: 1px;
+}
+.grafiek {
+  width: 50%;
+  height: fit-content;
+  margin: 0;
+}

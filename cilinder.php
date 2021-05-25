@@ -16,6 +16,7 @@ $data = $json_data[0];
 
 $cilinders = array();
 $cilinders_auto = array();
+$check = 0;
 
 
 foreach( $json_data as $data )
@@ -41,19 +42,17 @@ foreach( $json_data as $data )
         if($cilinder_kenteken_int > 100) {
             array_push($cilinders, $data_cilinder);
             array_push($cilinders_auto, $cilinder_kenteken_int);
+            $check++;
         }
     } else {
 
     }
-
-    //echo json_encode($cilinders);
-    //echo json_encode($cilinders_auto);
     }
     
 };
 
-$HTTP = array('CILINDER1' => $cilinders, 'CILINDER2' => $cilinders_auto);
+//$HTTP = array('CILINDER1' => $cilinders, 'CILINDER2' => $cilinders_auto);
 
-header('location: donut.php?' . http_build_query($HTTP));
+//header('location: grafieken.php?' . http_build_query($HTTP));
 
 ?>

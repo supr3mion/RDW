@@ -56,7 +56,7 @@
         ?>
         </div>
     </div>
-    <form id="grafieken" action="grafieken.php" method="POST">
+    <form id="grafieken" action="cilinder.php" method="POST">
 		<div> 
 			<button type="submit" id="button_grafieken" name="submit">Informatie Ophalen!</button> 
 		</div>

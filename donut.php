@@ -1,9 +1,4 @@
-<?php
 
-$cilinders = $_GET['CILINDER1'];
-$cilinders_auto = $_GET['CILINDER2'];
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,16 +19,17 @@ $cilinders_auto = $_GET['CILINDER2'];
 
     <script type="text/javascript">
 
-    // Eerst de PHP data opslaaj in JS variabelen
+    <?php include("cilinder.php"); ?>
+
     var cilinders = <?php echo json_encode($cilinders) ?>;
     var aantallen = <?php echo json_encode($cilinders_auto) ?>;
 
-    // Dan de setup code met onze eigen data
+
     const data = {
-        labels: cilinders, // hier de variabele ipv. een lijstje
+        labels: cilinders,
         datasets: [{
             label: 'autos met cilinders',
-            data: aantallen, // hier de variabele ipv. een lijstje
+            data: aantallen,
             backgroundColor: [
                 'red',
                 'yellow',
@@ -53,20 +49,17 @@ $cilinders_auto = $_GET['CILINDER2'];
             hoverOffset: 4
         }]
     };
-
-    // De config code
     const config = {
         type: 'doughnut',
         data: data,
     };
-
-    // En de code om de grafiek te laten tekenen:
     window.addEventListener('load', function() {
         var myChart = new Chart(
             document.getElementById('mijnGrafiek'),
             config
         );
     });
+    
     </script>
 
 </body>

@@ -1,3 +1,11 @@
+<?php
+
+$cilinders = $_GET['CILINDER1'];
+$cilinders_auto = $_GET['CILINDER2'];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +17,12 @@
 </head>
 <body>
     <h3>Hier kunt u nog meer informatie vinden, maar dan over alle auto's in Nederland!</h3>
-
-<div class="grafiek"></div>
+<div id="grafiek_grid">
+    <div class="grafiek">
+        <canvas id="mijnGrafiek"></canvas>
+        <?php include("grafiek.php"); ?>
+    </div>
+</div>
 <div class="grafiek"></div>
 <div class="grafiek"></div>
 <div class="grafiek"></div>
